@@ -31,7 +31,8 @@ class ProductController extends Controller
 
         $file = Request::file('file');
         $extension = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename().'.'.$extension,  File::get($file));
+        Storage::disk('local')->put($file->getFilename().'.'.$extension,  \File::get($file));
+
 
         $entry = new \App\File();
         $entry->mime = $file->getClientMimeType();
@@ -41,7 +42,7 @@ class ProductController extends Controller
         $entry->save();
 
         $product  = new Product();
-        $product->file_id=$entry->id;
+        $product->file_id= Storage::disk('local')->dirname($file->getFilename().'.'.$extension);
         $product->name =Request::input('name');
         $product->description =Request::input('description');
         $product->price =Request::input('price');

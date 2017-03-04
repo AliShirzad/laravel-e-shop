@@ -8,5 +8,8 @@
     {{ print($r) }}
 @endforeach
 
+@foreach($path as $p)
+    {{ print($p) }}
+@endforeach
 </body>
 </html>
