@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Product;
-use Illuminate\Support\Facades\View;
 
 class showProduct extends Controller
 {
-    public function show(){
-        $products = Product::all();
-        return view('main.show',['products' => $products]);
+    public function show()
+    {
+        $data = \Session::get('products');
+        $data = array_unique($data);
+        $result = array();
+        foreach ($data as $dd) {
+            $result[] = Product::find($dd);
+        }
+        return view('main.basket')->with('result', $result);
     }
 
 }

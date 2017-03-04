@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\File;
+
 use App\Product;
-use App\User;
-use Illuminate\Http\Request;
+
 
 class success extends Controller
 {
@@ -15,12 +14,10 @@ class success extends Controller
         foreach ($data as $dd){
             $result[]=Product::find($dd);
         }
-    foreach ($result as $r){
-        response()->download($r->imageurl);
-    }
 
-
-
+        return view('admin.Success', [
+            'result' => $result
+        ]);
     }
 
 }

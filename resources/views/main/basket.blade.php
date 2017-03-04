@@ -12,7 +12,7 @@
             <p>
                 {{$r->price}}
             </p>
-            <a href="/addProduct/remove/{{$r->id}}">Remove</a>
+            <a class="btn btn-danger" href="/addProduct/remove/{{$r->id}}">Remove</a>
             <hr>
         </li>
 
@@ -32,5 +32,6 @@
             margin-left: 50px;
         }
     </style>
+
 
 @endsection

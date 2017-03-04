@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-    @foreach($products as $product)
+
+    @foreach($result as $product)
         <h1>{{$product->id}}</h1>
         <h2>{{$product->name}}</h2>
         <h3>{{$product->description}}</h3>
