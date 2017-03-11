@@ -10,4 +10,6 @@
         <h5>{{$product->imgurl}}</h5>
         <h6>{{$product->file_id}}</h6>
     @endforeach
+
+
 @endsection

@@ -4,18 +4,19 @@
 
     <ul>
     @foreach($result as $r)
-        <img src="{{$r->imageurl}}" alt="">
+
+
+        <img src="{{$r['file_id']}}" alt="">
         <li>
             <h3>
-                {{$r->name}}
+                {{$r['name']}}
             </h3>
             <p>
-                {{$r->price}}
+                {{$r['price']}}
             </p>
-            <a class="btn btn-danger" href="/addProduct/remove/{{$r->id}}">Remove</a>
+            <a class="btn btn-danger" href="/addProduct/remove/{{$r['id']}}">Remove</a>
             <hr>
         </li>
-
 
     @endforeach
     </ul>

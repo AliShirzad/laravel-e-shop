@@ -27,6 +27,8 @@ Route::get('/success', 'success@downloadlink');
 Route::get('/show', 'showProduct@show');
 
 
+Route::get('/something', 'ProductController@UploadPhoto');
+
 //Route::get('fileentry', 'FileEntryController@index');
 //
 //Route::get('fileentry/get/{filename}', [
@@ -36,5 +38,6 @@ Route::get('/show', 'showProduct@show');
 //Route::post('fileentry/add',[
 //    'as' => 'addentry',
 //    'uses' => 'FileEntryController@add']);
+
 
 

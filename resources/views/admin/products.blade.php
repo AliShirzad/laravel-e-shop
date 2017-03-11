@@ -28,7 +28,7 @@
                         <tr>
                             <td>{{$product->name}}</td>
                             <td>{{$product->price}}$</td>
-                            <td>{{$product->file->original_filename}}</td>
+                            <td>{{$product->description}}</td>
                             <td><a href="/admin/product/destroy/{{$product->id}}"><button class="btn btn-danger">Del</button></a> </td>
                         </tr>
                     @endforeach

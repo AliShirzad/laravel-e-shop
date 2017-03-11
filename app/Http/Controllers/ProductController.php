@@ -11,6 +11,9 @@ use Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
+use Validator;
+use Illuminate\Support\Facades\Input;
+
 class ProductController extends Controller
 {
     public function index(){
@@ -29,28 +32,59 @@ class ProductController extends Controller
 
     public function add() {
 
-        $file = Request::file('file');
-        $extension = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename().'.'.$extension,  \File::get($file));
 
+//        $file = Request::file('file');
+//        $extension = $file->getClientOriginalExtension();
 
-        $entry = new \App\File();
-        $entry->mime = $file->getClientMimeType();
-        $entry->original_filename = $file->getClientOriginalName();
-        $entry->filename = $file->getFilename().'.'.$extension;
+//        $product = Product::all();
+//        return print_r($product);
+        if (Input::hasFile('image')) {
+            $file = array('image' => Input::file('image'));
+            $rules = array('image' => 'required|max:100000|mimes:jpeg,JPEG,PNG,png');
+            $messages=[
+                'image.required'=>'آپلود تصویر اجباری است ',
+                'image.max'=>'حجم فایل بسیار زیاد است ',
+                'image.mimes'=>'فرمت فایل شما ساپورت نمیشود.',
+            ];
+            $validator = Validator::make($file, $rules,$messages);
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+            if (Input::file('image')->isValid()) {
+                $destinationPath = 'uploads'; // upload path
+                $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+                $fileName = rand(11111,99999).'.'.$extension; // renameing image
+                Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+            }
+            else {
+            }
+        }
+        else
+            return 0;
 
-        $entry->save();
-
+//        $entry = new \App\File();
+//
+//        $entry->mime = $file->getClientMimeType();
+//        $entry->original_filename = $file->getClientOriginalName();
+//        $entry->filename = $file->getFilename().'.'.$extension;
+//
+//        $entry->save();
+//
         $product  = new Product();
-        $product->file_id= Storage::disk('local')->dirname($file->getFilename().'.'.$extension);
-        $product->name =Request::input('name');
-        $product->description =Request::input('description');
+
+        $product->file_id= $destinationPath.'/'.$fileName;
+        $product->file_num = $product->file_id;
+        $product->name = Request::input('name');
+        $product->description = Request::input('description');
         $product->price =Request::input('price');
-        $product->imageurl =Request::input('imageurl');
 
         $product->save();
 
         return redirect('/admin/products');
 
     }
+
+
 }

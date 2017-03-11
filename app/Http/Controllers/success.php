@@ -14,11 +14,16 @@ class success extends Controller
         foreach ($data as $dd){
             $result[]=Product::find($dd);
         }
+            function sleep(){
+                sleep(5);
+                \Session()->pull($this->data);
+            }
 
         return view('admin.Success', [
             'result' => $result,
-            'path' => $path
+
         ]);
+
     }
 
 }
