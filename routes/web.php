@@ -13,7 +13,6 @@
 
 Route::get('/', 'MainController@index');
 
-
 Route::get('/admin/product/new', 'ProductController@newProduct');
 Route::get('/admin/products', 'ProductController@index');
 Route::get('/admin/product/destroy/{id}', 'ProductController@destroy');
@@ -22,22 +21,12 @@ Route::post('/admin/product/save', 'ProductController@add');
 Route::get('/addProduct/add/{id}','addProduct@addbaskets');
 Route::get('/addProduct/remove/{id}','addProduct@removebaskets');
 
-Route::get('/success', 'success@downloadlink');
-
 Route::get('/show', 'showProduct@show');
 
+Route::get('/success', 'success@downloadlink');
 
-Route::get('/something', 'ProductController@UploadPhoto');
+Route::post('/user/profile', function () {
+    // Update the user's profile...
 
-//Route::get('fileentry', 'FileEntryController@index');
-//
-//Route::get('fileentry/get/{filename}', [
-//    'as' => 'getentry',
-//    'uses' => 'FileEntryController@get']);
-//
-//Route::post('fileentry/add',[
-//    'as' => 'addentry',
-//    'uses' => 'FileEntryController@add']);
-
-
-
+    return redirect('dashboard')->with('status', 'Profile updated!');
+});

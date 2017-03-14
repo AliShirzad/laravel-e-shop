@@ -19,7 +19,7 @@ class CreateTableProducts extends Migration
             $table->string('description');
             $table->float('price');
             $table->string('file_id');
-            $table->Integer('file_num')->nullable();
+            $table->string('file_num')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@
 
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail" >
-                            <img src="{{$product->imageurl}}" class="img-responsive">
+                            <img src="{{$product->file_id}}" class="img-responsive">
                             <div class="caption">
                                 <div class="row">
                                     <div class="col-md-6 col-xs-6">
@@ -33,7 +33,10 @@
                             </div>
                         </div>
                     </div>
+
                 @endforeach
+
+
             </div>
         </div>
     </div>

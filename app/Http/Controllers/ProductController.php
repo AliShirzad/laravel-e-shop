@@ -72,13 +72,16 @@ class ProductController extends Controller
 //
 //        $entry->save();
 //
+        $post = Input::All();
+
         $product  = new Product();
 
+
         $product->file_id= $destinationPath.'/'.$fileName;
-        $product->file_num = $product->file_id;
-        $product->name = Request::input('name');
-        $product->description = Request::input('description');
-        $product->price =Request::input('price');
+
+        $product->name = $post['name'];
+        $product->description = $post['description'];
+        $product->price = $post['price'];
 
         $product->save();
 

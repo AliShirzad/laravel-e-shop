@@ -21,18 +21,18 @@
                 </button>
                 <a class="navbar-brand" href="/">Laravel digital Shop</a>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    @if(!Auth::user())
-                        <li><a href="/auth/login">Login</a></li>
-                        <li><a href="/auth/register">Signup</a></li>
-                    @else
-                        <li><a href="/order">My Order <span class="fa fa-briefcase"></span></a></li>
-                        <li><a href="/cart">Cart <span class="fa fa-shopping-cart"></span></a></li>
-                        <li><a href="/auth/logout">Logout {{ Auth::user()->name}}</a></li>
-                    @endif
-                </ul>
-            </div><!-- /.navbar-collapse -->
+            {{--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">--}}
+                {{--<ul class="nav navbar-nav navbar-right">--}}
+                    {{--@if(!Auth::user())--}}
+                        {{--<li><a href="/auth/login">Login</a></li>--}}
+                        {{--<li><a href="/auth/register">Signup</a></li>--}}
+                    {{--@else--}}
+                        {{--<li><a href="/order">My Order <span class="fa fa-briefcase"></span></a></li>--}}
+                        {{--<li><a href="/cart">Cart <span class="fa fa-shopping-cart"></span></a></li>--}}
+                        {{--<li><a href="/auth/logout">Logout {{ Auth::user()->name}}</a></li>--}}
+                    {{--@endif--}}
+                {{--</ul>--}}
+            {{--</div><!-- /.navbar-collapse -->--}}
         </div><!-- /.container-fluid -->
     </nav>
 @show

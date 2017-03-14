@@ -5,11 +5,23 @@
 <body>
 
 @foreach($result as $item)
-    {{--<a href="storage/app/{{ str_replace("/storage/", "",  "$item->file_id") }}">{{ $item->name }}</a>--}}
-    {{--{{ print_r($item->file_id) }}--}}
-    <a href="{{$item['file_num']}}">Download {{ $item['name'] }}</a>
+    <a href="../{{$item['file_id']}}">Download {{ $item['name'] }}</a>
     <br>
+
+
 @endforeach
+{{--<h1>--}}
+    {{--{{print($id)}}--}}
+{{--</h1>--}}
+{{--<br>--}}
+{{--@foreach($data as $dd)--}}
+{{--<h1>Data is: {{ print_r($dd) }}</h1>--}}
+{{--@endforeach--}}
+
+{{--@foreach($product as $pp)--}}
+    {{--<h1>Product is: {{ print_r($pp->id) }}</h1>--}}
+{{--@endforeach--}}
+
 
 
 

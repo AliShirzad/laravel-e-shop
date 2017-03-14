@@ -30,7 +30,7 @@ class addProduct extends Controller
         }
         \Session::forget('products');
         \Session::put('products',$data);
-        return redirect('/');
+        return redirect('/show');
     }
 }
 

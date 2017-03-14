@@ -10,8 +10,8 @@
 6 silly lifecycle @~prewatch: no script for prewatch, continuing
 7 info lifecycle @~watch: @
 8 verbose lifecycle @~watch: unsafe-perm in lifecycle true
-9 verbose lifecycle @~watch: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/alish/Desktop/Expriment/laravel/vestacamp/FileShop/node_modules/.bin:/Users/alish/anaconda/bin:/Users/alish/anaconda/bin:/Users/alish/.yarn/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/alish/.dnx/runtimes/dnx-coreclr-darwin-x64.1.0.0-rc2-20221/bin:/Users/alish/.dnx/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Applications/Sublime Text 2.app/Contents/SharedSupport/bin:/usr/local/mysql/bin
-10 verbose lifecycle @~watch: CWD: /Users/alish/Desktop/Expriment/laravel/vestacamp/FileShop
+9 verbose lifecycle @~watch: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/alish/Desktop/Expriment/Laravel/vestacamp/FileShop/node_modules/.bin:/usr/local/mysql/bin:/Users/alish/anaconda/bin:/Users/alish/anaconda/bin:/Users/alish/.yarn/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/alish/.dnx/runtimes/dnx-coreclr-darwin-x64.1.0.0-rc2-20221/bin:/Users/alish/.dnx/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Applications/Sublime Text 2.app/Contents/SharedSupport/bin:/usr/local/mysql/bin
+10 verbose lifecycle @~watch: CWD: /Users/alish/Desktop/Expriment/Laravel/vestacamp/FileShop
 11 silly lifecycle @~watch: Args: [ '-c',
 11 silly lifecycle   'node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js' ]
 12 silly lifecycle @~watch: Returned: code: 1  signal: null
@@ -27,7 +27,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:885:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid @
-16 verbose cwd /Users/alish/Desktop/Expriment/laravel/vestacamp/FileShop
+16 verbose cwd /Users/alish/Desktop/Expriment/Laravel/vestacamp/FileShop
 17 error Darwin 16.4.0
 18 error argv "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/bin/npm-cli.js" "run" "watch"
 19 error node v7.2.1

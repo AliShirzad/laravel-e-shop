@@ -16,7 +16,9 @@ class showProduct extends Controller
         foreach ($data as $dd) {
             $result[] = Product::find($dd);
         }
-        return view('main.basket')->with('result', $result);
+
+        return view('main.basket' , compact('result', 'data'));
+//            compact($data , $result));
     }
 
 }
