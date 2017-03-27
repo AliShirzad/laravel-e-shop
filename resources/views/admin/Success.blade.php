@@ -18,12 +18,7 @@
 
 @endsection
 
-<script>
-    var img = document.getElementsByClassName('img');
-    img.addEventListener('click', function(){
-        setTimeout(function(){ alert("Hello"); }, 3000);
-    });
-</script>
+
 
 
 
