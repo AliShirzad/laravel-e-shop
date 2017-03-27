@@ -23,10 +23,9 @@ Route::get('/addProduct/remove/{id}','addProduct@removebaskets');
 
 Route::get('/show', 'showProduct@show');
 
-Route::get('/success', 'success@downloadlink');
+Route::get('/success/{id}', 'success@downloadlink');
+Route::get('/succes/finalPage/{id}', 'success@finalPage');
+Route::get('/destroy{id}', 'UserController@index');
 
-Route::post('/user/profile', function () {
-    // Update the user's profile...
 
-    return redirect('dashboard')->with('status', 'Profile updated!');
-});
+

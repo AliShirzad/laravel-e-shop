@@ -30,7 +30,8 @@ class ProductController extends Controller
         return view('admin.new');
     }
 
-    public function add() {
+    public function add()
+    {
 
 
 //        $file = Request::file('file');
@@ -41,12 +42,12 @@ class ProductController extends Controller
         if (Input::hasFile('image')) {
             $file = array('image' => Input::file('image'));
             $rules = array('image' => 'required|max:100000|mimes:jpeg,JPEG,PNG,png');
-            $messages=[
-                'image.required'=>'آپلود تصویر اجباری است ',
-                'image.max'=>'حجم فایل بسیار زیاد است ',
-                'image.mimes'=>'فرمت فایل شما ساپورت نمیشود.',
+            $messages = [
+                'image.required' => 'آپلود تصویر اجباری است ',
+                'image.max' => 'حجم فایل بسیار زیاد است ',
+                'image.mimes' => 'فرمت فایل شما ساپورت نمیشود.',
             ];
-            $validator = Validator::make($file, $rules,$messages);
+            $validator = Validator::make($file, $rules, $messages);
             if ($validator->fails()) {
                 return redirect()->back()
                     ->withErrors($validator)
@@ -55,14 +56,14 @@ class ProductController extends Controller
             if (Input::file('image')->isValid()) {
                 $destinationPath = 'uploads'; // upload path
                 $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
-                $fileName = rand(11111,99999).'.'.$extension; // renameing image
+                $fileName = rand(11111, 99999) . '.' . $extension; // renameing image
+                session(['filename' => $fileName]);
                 Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+            } else {
             }
-            else {
-            }
-        }
-        else
+        } else {
             return 0;
+        }
 
 //        $entry = new \App\File();
 //

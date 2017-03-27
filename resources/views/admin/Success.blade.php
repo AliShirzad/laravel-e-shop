@@ -1,49 +1,73 @@
-<html>
-<head>
-    <title>Success</title>
-</head>
-<body>
-
-@foreach($result as $item)
-    <a href="../{{$item['file_id']}}">Download {{ $item['name'] }}</a>
-    <br>
+@extends('layouts.master')
 
 
-@endforeach
-{{--<h1>--}}
-    {{--{{print($id)}}--}}
-{{--</h1>--}}
-{{--<br>--}}
-{{--@foreach($data as $dd)--}}
-{{--<h1>Data is: {{ print_r($dd) }}</h1>--}}
-{{--@endforeach--}}
 
-{{--@foreach($product as $pp)--}}
-    {{--<h1>Product is: {{ print_r($pp->id) }}</h1>--}}
-{{--@endforeach--}}
+@section('content')
+
+    @foreach($result as $r)
+
+        <a class="img" href="/succes/finalPage/{{$r['result']}}">{{$r['name']}}</a>
+
+    @endforeach
+
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
+
+@endsection
+
+<script>
+    var img = document.getElementsByClassName('img');
+    img.addEventListener('click', function(){
+        setTimeout(function(){ alert("Hello"); }, 3000);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <style>
-    *{
-        text-align: center;
-        margin-top: 10vh;
-    }
+    .container{
+            text-align: center;
+        }
 
-    a{
-        font-size: 4em;
-        color: gray;
+    .img{
+        text-decoration: none;
+        margin-top: 5em;
+        font-size: 3em;
+        padding: 1em;
+        color: darkorange;
+        box-shadow: .3em .3em orangered, 1em 1em 0.2em lightsalmon;
+        border:1px solid orange;
         font-weight: bold;
+        border-radius: 10em;
     }
 </style>
 
 
-<script>
-    var a1 = document.querySelector('a');
-    console.log(a1);
 
-</script>
 </body>
 </html>

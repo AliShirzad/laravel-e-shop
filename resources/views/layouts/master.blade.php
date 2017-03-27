@@ -1,5 +1,7 @@
 <html>
+
 <head>
+    @yield('head')
     <title>Laravel eshop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -37,7 +39,7 @@
     </nav>
 @show
 
-<div class="container" style="margin-top: 6%">
+<div class="container" style="margin-top: 10%;">
     @yield('content')
 </div>
 </body>

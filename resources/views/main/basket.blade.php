@@ -37,21 +37,22 @@
             @endforeach
     </ul>
 
-@foreach($data as $dd)
-    @if(is_null($dd))
-        {{--{{ print($r['file_id']) }}--}}
-        <h3><a href="/">سبد خرید خالی است</a></h3>
-    @endif
-@endforeach
+
+
     <br/>
     <div class="col-sm-12 col-md-12" style="margin-top: 10%;">
         <div class="row">
 
-            @if(!is_null($dd))
-                <a id="downloadlink" href="/success/">Download All</a>
+            @if(isset($dd))
+                <a id="downloadlink" href="/success/{{$string}}">Download All</a>
+            @else
+                <h1><a href="/">Basket is empty. Return home.</a></h1>
             @endif
 
         </div>
+
+
+
 
     <style>
         #downloadlink{

@@ -25,9 +25,11 @@ class addProduct extends Controller
     {
         $products = \Session::get('products');
         $data = array_unique($products);
+
         if(($key = array_search($id, $data)) !== false) {
             unset($data[$key]);
         }
+
         \Session::forget('products');
         \Session::put('products',$data);
         return redirect('/show');
